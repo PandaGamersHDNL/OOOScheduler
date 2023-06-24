@@ -1,0 +1,23 @@
+{
+    "id": "oooschedulerMessage",
+    "description": "Message definition for events. these will be set to the users Automatic reply message",
+    "name": "messageExtention",
+    "targetTypes": [
+        "Event"
+    ],
+    "owner": "e3a84abf-c825-48d5-97b5-75d912660d2d",
+    "properties": [
+        {
+            "name": "messageId",
+            "type": "String"
+        },
+        {
+            "name": "message",
+            "type": "String"
+        },
+        {
+            "name": "messageType",
+            "type": "String"
+        }
+    ]
+}

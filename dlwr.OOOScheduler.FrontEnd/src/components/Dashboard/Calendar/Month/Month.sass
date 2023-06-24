@@ -1,0 +1,44 @@
+
+.MonthHeader
+    background-color: var(--delaware-teal)
+    display: flex
+
+.MonthHeaderItem
+    flex: 1 1 0px
+
+.Month
+    width: fit-content
+    align-self: center
+
+.MonthHeader * 
+    padding: 0 5px
+
+
+* a
+    color: var(--text-color)
+
+
+.Month 
+    height: 95%
+
+.TableBody
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    height: inherit
+
+.TableBodyItem
+    min-width: 50px
+    height: calc(100%)
+    min-height: 50px
+    width: calc(100%/7) 
+    border-top: 1px solid gray
+
+.TableBodyItem > *
+        padding: 0 0 0 5px
+
+
+.Today
+    border-top-color: var(--delaware-red)
+    background-color: var(--delaware-red-sub1)
+    border-top-width: 3px

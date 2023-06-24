@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dlwr.OOOScheduler.WebApi", "dlwr.OOOScheduler.BackEnd\dlwr.OOOScheduler.WebApi\dlwr.OOOScheduler.WebApi.csproj", "{44796AC7-A563-4D39-BA0B-3BA4F2B4C141}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dlwr.OOOScheduler.Services", "dlwr.OOOScheduler.BackEnd\dlwr.OOOScheduler.Services\dlwr.OOOScheduler.Services.csproj", "{F3BC8019-9738-4752-A2D0-EF54940AF28A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dlwr.OOOScheduler.Core", "dlwr.OOOScheduler.BackEnd\dlwr.OOOScheduler.Core\dlwr.OOOScheduler.Core.csproj", "{A7A99577-3E13-4CE2-8AD8-53FFD14D6202}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dlwr.OOOScheduler.Repositories", "dlwr.OOOScheduler.BackEnd\dlwr.OOOScheduler.Repositories\dlwr.OOOScheduler.Repositories.csproj", "{579B29AC-50DB-4257-A705-C93BAB03CA03}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dlwr.OOOScheduler.WebJobs", "dlwr.OOOScheduler.BackEnd\dlwr.OOOScheduler.WebJobs\dlwr.OOOScheduler.WebJobs.csproj", "{20741164-C8F5-4875-AADA-7A3CA393A3D4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F3BC8019-9738-4752-A2D0-EF54940AF28A} = {F3BC8019-9738-4752-A2D0-EF54940AF28A}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44796AC7-A563-4D39-BA0B-3BA4F2B4C141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44796AC7-A563-4D39-BA0B-3BA4F2B4C141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44796AC7-A563-4D39-BA0B-3BA4F2B4C141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44796AC7-A563-4D39-BA0B-3BA4F2B4C141}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3BC8019-9738-4752-A2D0-EF54940AF28A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3BC8019-9738-4752-A2D0-EF54940AF28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3BC8019-9738-4752-A2D0-EF54940AF28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3BC8019-9738-4752-A2D0-EF54940AF28A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7A99577-3E13-4CE2-8AD8-53FFD14D6202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7A99577-3E13-4CE2-8AD8-53FFD14D6202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7A99577-3E13-4CE2-8AD8-53FFD14D6202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7A99577-3E13-4CE2-8AD8-53FFD14D6202}.Release|Any CPU.Build.0 = Release|Any CPU
+		{579B29AC-50DB-4257-A705-C93BAB03CA03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{579B29AC-50DB-4257-A705-C93BAB03CA03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{579B29AC-50DB-4257-A705-C93BAB03CA03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{579B29AC-50DB-4257-A705-C93BAB03CA03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20741164-C8F5-4875-AADA-7A3CA393A3D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20741164-C8F5-4875-AADA-7A3CA393A3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20741164-C8F5-4875-AADA-7A3CA393A3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20741164-C8F5-4875-AADA-7A3CA393A3D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FF8B6E6-BA65-4A1A-BE41-90155B5FF44C}
+	EndGlobalSection
+EndGlobal

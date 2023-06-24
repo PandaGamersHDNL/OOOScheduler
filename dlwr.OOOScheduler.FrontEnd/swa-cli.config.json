@@ -1,0 +1,14 @@
+{
+  "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
+  "configurations": {
+    "dw-oooscheduler-devjj-swa": {
+      "appLocation": ".",
+      "outputLocation": "dist",
+      "appBuildCommand": "npm run build",
+      "run": "npm run dev",
+      "appDevserverUrl": "http://localhost:5173",
+      "appName": "dw-OOOScheduler-devjj-swa",
+      "resourceGroup": "dw-OOOScheduler-devjj-rg"
+    }
+  }
+}

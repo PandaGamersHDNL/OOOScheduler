@@ -1,0 +1,51 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+    "version": "1.0.2",
+    "manifestVersion": "1.16",
+    "id": "87bf41ad-73a5-489b-a682-9f5bb9cbf91b",
+    "packageName": "com.package.name",
+    "name": {
+        "short": "Out-of-office scheduler",
+        "full": "Out of office scheduler - delaware"
+    },
+    "developer": {
+        "name": "delaware",
+        "mpnId": "",
+        "websiteUrl": "https://polite-wave-0bc1ddf03.2.azurestaticapps.net/web",
+        "privacyUrl": "https://polite-wave-0bc1ddf03.2.azurestaticapps.net/pvc",
+        "termsOfUseUrl": "https://polite-wave-0bc1ddf03.2.azurestaticapps.net/tos"
+    },
+    "description": {
+        "short": "Schedule time for when you are out of office and let it turn on the auto reply",
+        "full": "Schedule time for when you are out of office. It will turn on the automatic reply function of outlook for when you're not in the office. Schedule once and forget about it"
+    },
+    "icons": {
+        "outline": "outline.png",
+        "color": "color.png"
+    },
+    "accentColor": "#FFFFFF",
+    "staticTabs": [
+        {
+            "entityId": "72bfe4e9-8d3f-47ee-8a2a-5bc1bf516f91",
+            "name": "OOOScheduler",
+            "contentUrl": "https://polite-wave-0bc1ddf03.2.azurestaticapps.net",
+            "scopes": [
+                "personal"
+            ],
+            "context": [
+                "personalTab"
+            ]
+        },
+        {
+            "entityId": "about",
+            "scopes": [
+                "personal"
+            ]
+        }
+    ],
+    "validDomains": [],
+    "webApplicationInfo": {
+        "id": "e3a84abf-c825-48d5-97b5-75d912660d2d",
+        "resource": "api://polite-wave-0bc1ddf03.2.azurestaticapps.net/e3a84abf-c825-48d5-97b5-75d912660d2d"
+    }
+}

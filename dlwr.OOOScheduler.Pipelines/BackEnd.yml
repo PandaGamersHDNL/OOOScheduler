@@ -1,0 +1,52 @@
+trigger:
+  branches:
+    include:
+      - '*'
+  paths:
+    include:
+      - dlwr.OOOScheduler.BackEnd
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: NuGetToolInstaller@1
+  displayName: 'Update NuGet'
+  inputs:
+    checkLatest: true
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: VSBuild@1
+  inputs:
+    solution: '$(solution)'
+    msbuildArgs: '-target:dlwr_OOOScheduler_WebApi /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+    
+
+##- task: PublishPipelineArtifact@1
+##  inputs:
+##    targetPath: '$(Build.ArtifactStagingDirectory)' 
+##    artifactName: 'myWebsiteName'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'vs prof sub rg oooscheduler'
+    appType: 'webApp'
+    WebAppName: 'dw-oooscheduler-devjj-as'
+    packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
+    resourceGroupName: 'dw-OOOScheduler-devjj-rg'
+##- task: AzureWebApp@1
+##  inputs:
+##    azureSubscription: 'vs prof sub rg oooscheduler'
+##    appType: 'webApp'
+##    appName: 'dw-OOOScheduler-devjj-as'
+##    package: $(System.DefaultWorkingDirectory)/**/*.zip
+##    deploymentMethod: 'auto'
+##    resourceGroupName: 'dw-OOOScheduler-devjj-rg'

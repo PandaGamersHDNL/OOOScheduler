@@ -1,0 +1,55 @@
+
+.HorzFlex
+    display: flex
+    flex-direction: row
+    align-items: flex-end
+    margin: 5px 0
+
+.Settings
+    margin: 10px auto
+    width: fit-content
+    max-width: 80%
+
+    padding: 20px
+    border-radius: 20px
+    background-color: var(--delaware-light-gray)
+
+.Placeholders
+    margin: 5px 0px
+.Actions
+    min-width: 72px
+
+.Settings td
+    padding: 5px
+
+.FlexSpacer
+    flex-grow: .5
+
+//TODO revise
+.dropdown-161:focus
+    border: 2px solid var(--delaware-red)
+
+.dropdown-161:active .ms-Dropdown-title, .dropdown-202:active .ms-Dropdown-title
+    border: 1px solid var(--delaware-red)
+
+.dropdown-199:active .ms-Dropdown-title
+    border: 1px solid var(--delaware-red)
+
+.dropdown-161:focus::after
+     border: 1px solid var(--delaware-red)
+.dropdown-199:focus::after
+     border: 1px solid var(--delaware-red)
+
+//toggle button
+.is-checked > .ms-Toggle-innerContainer > *
+    background-color: var(--delaware-red)
+
+//slider
+.ms-Slider-active
+    background-color: var(--delaware-red)
+
+.ms-Slider-slideBox:hover .ms-Slider-active, .ms-Slider-slideBox:active .ms-Slider-active
+    background-color: var(--delaware-red-sub1)
+
+.ms-Slider-slideBox:hover .ms-Slider-thumb, .ms-Slider-slideBox:active .ms-Slider-thumb    
+    border-color: var(--delaware-red-sub1)
