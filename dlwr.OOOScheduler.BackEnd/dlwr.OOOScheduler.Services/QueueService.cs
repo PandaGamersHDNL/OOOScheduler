@@ -1,5 +1,6 @@
 ﻿using Azure.Storage.Queues;
 using dlwr.OOOScheduler.Core;
+using dlwr.OOOScheduler.Services.Contracts;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Microsoft.Graph.ExternalConnectors;
 using Newtonsoft.Json;
@@ -13,7 +14,7 @@ using static dlwr.OOOScheduler.Core.Global;
 
 namespace dlwr.OOOScheduler.Services
 {
-    public class QueueService
+    public class QueueService : IQueueService
     {
         readonly QueueClient QueueClient;
         public QueueService(QueueClient queueClient) { QueueClient = queueClient; }

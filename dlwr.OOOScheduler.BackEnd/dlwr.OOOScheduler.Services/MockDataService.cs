@@ -71,7 +71,7 @@ namespace dlwr.OOOScheduler.Services
 
         public Task<IEnumerable<Event>> GetEvents(string startDate, string endDate)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(events.AsEnumerable());
         }
 
         public Task<IEnumerable<Event>> GetEventsInstances(string id, string startDate, string endDate)

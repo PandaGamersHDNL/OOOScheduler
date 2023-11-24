@@ -13,8 +13,8 @@ namespace dlwr.OOOScheduler.WebApi.Controllers
     {
 
         readonly IDataService _DataService;
-        readonly QueueService _QueueService;
-        public GraphController(IDataService DataService, QueueService queueService)
+        readonly IQueueService _QueueService;
+        public GraphController(IDataService DataService, IQueueService queueService)
         {
             _DataService = DataService;
             _QueueService = queueService;

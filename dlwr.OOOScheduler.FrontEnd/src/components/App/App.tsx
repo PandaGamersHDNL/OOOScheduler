@@ -31,9 +31,13 @@ export default function App() {
 	})
 	useEffect(() => {
 		(async () => {
-
-			await msalInstance.handleRedirectPromise()
-				.catch((e) => console.error(e));
+            console.log("handleRedirect start");
+            
+			const eep = await msalInstance.handleRedirectPromise()
+				.catch((e) => {console.error("handleRedirect" , e);
+                });
+                console.log("handleRedirect res", eep);
+                
 			//TODO only do check user with events integrated
 			setIsLoading(true);
 			ApiService.getEventData(eventRange.start, eventRange.end).then(v => {

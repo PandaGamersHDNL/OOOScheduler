@@ -13,8 +13,8 @@ namespace dlwr.OOOScheduler.Services
     {
         static string EventSelect = Global.SchemaExtentions.MessageId + ",start,end,subject,showAs,type,seriesMasterId, recurrence";
         GraphServiceClient _MSClient;
-        QueueService _QueueService;
-        public DataService(GraphServiceClient MSClient, QueueService queueService)
+        IQueueService _QueueService;
+        public DataService(GraphServiceClient MSClient, IQueueService queueService)
         {
             _MSClient = MSClient;
             _QueueService = queueService;

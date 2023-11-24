@@ -2,7 +2,7 @@ import axios from "axios";
 import { msalInstance } from "./MsalService";
 import { authentication } from "@microsoft/teams-js";
 import * as MsalConfig from "../MsalConfig";
-import { AccountInfo } from "@azure/msal-browser";
+import { AccountInfo, SilentRequest } from "@azure/msal-browser";
 export function IsTeams(): boolean {
   return (getClientType() == ClientType.TeamsBrowser) || (getClientType() == ClientType.TeamsDesktopApp)
 }
@@ -67,7 +67,7 @@ export const getSSOToken = (forApi: boolean): Promise<string> => {
 		}); // gets auth token for api -> request new token with the right scope -> use that token to call the batch
 	} else {
 		const scopes = forApi ? MsalConfig.loginApiRequest.scopes : ["User.Read"];
-
+        
 		return handleAuth(scopes);
 	}
 };
@@ -75,7 +75,7 @@ export const getSSOToken = (forApi: boolean): Promise<string> => {
 const handleAuth = async (scopes: string[]): Promise<string> => {
 	let token = "";
 	if (!msalInstance.getActiveAccount()) {
-		const allAccounts = msalInstance.getAllAccounts();
+        const allAccounts = msalInstance.getAllAccounts();
 		if (!allAccounts || allAccounts.length <= 0) {
 
 		}
@@ -84,18 +84,19 @@ const handleAuth = async (scopes: string[]): Promise<string> => {
 		}
 	}
 
-
-	const redirectRequestParams = { scopes: scopes, account: msalInstance.getActiveAccount() as AccountInfo };
+    //account: msalInstance.getActiveAccount() as AccountInfo
+	const redirectRequestParams = { scopes: scopes, redirectUri:  import.meta.env.VITE_REDIRECT_URI} as SilentRequest;
 
 	try {
 		token = (await msalInstance.acquireTokenSilent(redirectRequestParams)).accessToken;
 	}
 	catch (error) {
+        console.log("threw error on acquire silent");
+        
 		// error toevoegen
 		msalInstance.acquireTokenRedirect(redirectRequestParams)
 			.catch(v => console.error("could not get token from redirect, login failed", v));
 	}
-
 	return token;
 };
 

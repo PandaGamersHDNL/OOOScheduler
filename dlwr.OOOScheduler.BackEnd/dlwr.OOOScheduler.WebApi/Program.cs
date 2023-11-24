@@ -40,8 +40,8 @@ namespace dlwr.OOOScheduler.WebApi
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddScoped<IDBService, DBService>();
-            var queueService = new QueueService(queueClient);
-            builder.Services.AddSingleton(queueService);
+            var queueService = new FakeQueueService(); //new QueueService(queueClient);
+            builder.Services.AddSingleton<IQueueService>(queueService);
             var dlwrConnectionString = builder.Configuration.GetConnectionString(Global.ConnectionStrings.dlwrConnectionString);
             if (string.IsNullOrEmpty(dlwrConnectionString))
             {
@@ -75,7 +75,7 @@ namespace dlwr.OOOScheduler.WebApi
             });
             var msclient = builder.Services.BuildServiceProvider().GetService<GraphServiceClient>();
 
-            builder.Services.AddSingleton<IDataService>(new DataService(msclient, queueService));
+            builder.Services.AddSingleton<IDataService>(new MockDataService()/*new DataService(msclient, queueService)*/);
             var app = builder.Build();
 
             if (app.Environment.IsDevelopment())
